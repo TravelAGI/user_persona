@@ -1,7 +1,7 @@
 import { useEffect, useState,useRef } from "react";
 import ChatBox from "./chatBox";
 import { io } from "socket.io-client";
- const socket = io("http://localhost:3000");
+ const socket = io("https://hurtling-rodney-phenotypical.ngrok-free.dev");
 
 // Persona Display Component
 function PersonaDisplay({ persona }) {
@@ -412,7 +412,7 @@ export default function App() {
         <div className="persona-section">
           {!accountId ? (
             <button className="connect-button" onClick={handleOnClick}>
-              Connect to composio
+              Connect to gmail
             </button>
           ) : userPersona ? (
             <PersonaDisplay persona={userPersona} />
