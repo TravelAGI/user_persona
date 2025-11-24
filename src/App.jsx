@@ -1,7 +1,7 @@
 import { useEffect, useState,useRef } from "react";
 import ChatBox from "./chatBox";
 import { io } from "socket.io-client";
- const socket = io("http://localhost:3000");
+ const socket = io("https://travel-agi-backend.up.railway.app");
 
 // Persona Display Component
 function PersonaDisplay({ persona }) {
@@ -300,7 +300,7 @@ export default function App() {
      setAccountId(returnedAccountId);
      localStorage.setItem("account_id", returnedAccountId);
      
-     fetch("https://gameskraft.app.n8n.cloud/webhook-test/d2d9c8e1-f349-4e9f-b11c-e9231c273dba", {
+     fetch("https://gameskraft.app.n8n.cloud/webhook/d2d9c8e1-f349-4e9f-b11c-e9231c273dba", {
        method: "POST",
        headers: {
          "Content-Type": "application/json",
@@ -372,7 +372,7 @@ export default function App() {
        console.log("Kunalllll",id);
        setUserId(id);
        localStorage.setItem("user_id", id);
-      const response = await fetch("https://gameskraft.app.n8n.cloud/webhook-test/45323bb7-0ecb-4946-8f76-a9e283c3a369", {
+      const response = await fetch("https://gameskraft.app.n8n.cloud/webhook/45323bb7-0ecb-4946-8f76-a9e283c3a369", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
