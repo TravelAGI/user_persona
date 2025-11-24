@@ -1,7 +1,7 @@
 import { useEffect, useState,useRef } from "react";
 import ChatBox from "./chatBox";
 import { io } from "socket.io-client";
- const socket = io("https://hurtling-rodney-phenotypical.ngrok-free.dev");
+ const socket = io("http://localhost:3000");
 
 // Persona Display Component
 function PersonaDisplay({ persona }) {
@@ -55,8 +55,10 @@ function PersonaDisplay({ persona }) {
         <div className="preference-grid">
           {Object.entries(preferences).map(([key, value]) => (
             <div key={key} className="preference-item">
-              <div className="preference-label">{key}</div>
-              <div className="preference-value">{formatPercentage(value)}</div>
+              <div className="progress-label-row">
+                <div className="preference-label">{key}</div>
+                <div className="preference-value">{formatPercentage(value)}</div>
+              </div>
               <div className="preference-bar-container">
                 <div 
                   className="preference-bar" 
@@ -402,7 +404,7 @@ export default function App() {
       </div>
 
       <div className="right-side">
-        {!userPersona && (
+        {userPersona && (
           <>
             <elevenlabs-convai agent-id="agent_0201kadrz4f4ffyahjzxzt3d5abv"></elevenlabs-convai>
             <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
