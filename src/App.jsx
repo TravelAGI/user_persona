@@ -309,7 +309,7 @@ export default function App() {
          connected_account_id: returnedAccountId,
          entity_id: savedUserId,
          page_token:"",
-         isFirstCall:true
+         isFirstCall:"true"
        }),
      }).then(() => {
        console.log("Webhook called successfully");
