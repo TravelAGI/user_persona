@@ -307,7 +307,8 @@ export default function App() {
        },
        body: JSON.stringify({
          connected_account_id: returnedAccountId,
-         entity_id: savedUserId
+         entity_id: savedUserId,
+         page_token:""
        }),
      }).then(() => {
        console.log("Webhook called successfully");
